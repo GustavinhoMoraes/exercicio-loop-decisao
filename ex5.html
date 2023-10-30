@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recrutamento</title>
+</head>
+
+<body>
+    <p>Candidatos: <span id="candidatos"></span></p>
+    <p>Masculino: <span id="masculino"></span></p>
+    <p>Feminino: <span id="feminino"></span></p>
+    <p>Quantidade: <span id="quantidade"></span></p>
+
+    <script>
+        let masculino = 0;
+        let feminino = 0;
+        let quantidade = 0;
+        let experiencia = 0;
+
+        let pergunta = Number(prompt("Quer registrar um candidato.\n[0] - Sim\n[1] - Não"));
+
+        while (pergunta === 0) {
+            let Candidato = prompt("Digite o nome do candidato");
+            let Idade = parseInt(prompt("Digite a idade do candidato"));
+            let Sexo = parseInt(prompt("Digite 1 para masculino e 2 para feminino"));
+            let Experiencia = parseInt(prompt("O candidato tem experiência? (1 - Sim, 2 - Não)"));
+
+            if (Sexo === 1) {
+                masculino++;
+            } else if (Sexo === 2) {
+                feminino++;
+            }
+
+            quantidade++;
+            
+            
+            pergunta = Number(prompt("Quer cadastrar outro candidato.\n[0] - Sim\n[1] - Não"));
+            
+            document.getElementById("candidatos").innerHTML += "<hr/>Candidato: " + Candidato + "<br>Idade: " + Idade;
+        }
+
+        document.getElementById("masculino").innerHTML = masculino;
+        document.getElementById("feminino").innerHTML = feminino;
+        document.getElementById("quantidade").innerHTML = quantidade;
+    </script>
+</body>
+
+</html>

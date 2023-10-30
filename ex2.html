@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Imposto</title>
+</head>
+<body>
+    <h1>Calculadora de Imposto</h1>
+
+    <div id="resultados"></div>
+
+    <script>
+          let pergunta = Number(prompt("Quer cadastrar para calcular o imposto. \n [ 0 ]- Sim \n [ 1 ] Não "));
+    while (pergunta == 0) {
+
+const nome = prompt('digite o Nome do contribuinte:');
+        const cpf = prompt('digite o CPF do contribuinte:');
+        const rendaAnual = Number(prompt('digite a Renda anual do contribuinte:'));
+        const numDependentes = Number(prompt('digite o Número de dependentes:'));
+        var imposto = 0;
+        function calcularImposto(nome, cpf, rendaAnual, numDependentes) {
+            
+            const descontoDependentes = numDependentes * 110;
+
+            const rendaLiquida = rendaAnual - descontoDependentes;
+
+           
+          
+            
+            if (rendaLiquida <= 900) {
+                imposto = 0;
+            } else if (rendaLiquida <= 5000  && rendaLiquida > 900) {
+                imposto = rendaLiquida * 0.05;
+            } else if (rendaLiquida <= 10000 && rendaLiquida > 5000) {
+                imposto = rendaLiquida * 0.10;
+            } else 
+                imposto = rendaLiquida * 0.15;
+            }
+            pergunta = Number(prompt("Quer cadastrar outro registro para fazer o calcuulo?.\n [ 0 ]- Sim \n [ 1 ] Não"));
+
+            const resultados = document.getElementById('resultados');
+            resultados.innerHTML += `
+                <p>Nome: ${nome}</p>
+                <p>CPF: ${cpf}</p>
+                <p>Imposto a pagar: R$ ${ imposto }</p>
+                <hr>
+            `;
+        }
+
+        
+
+
+        
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nota</title>
+</head>
+
+<body>
+    <h1>Atividade 01</h1>
+    <div id="aluno"></div>
+    <script>
+        let pergunta = Number(prompt("Quer cadastrar as informações sobre os alunos. \n [ 1 ]- Sim \n [ 0 ] Não "));
+        while (pergunta == 1) {
+            let matricula = Number(prompt("Digite a matrícula do aluno."));
+            let alunoaprovado="";
+            let alunoreprovado="";
+            let n1 = Number(prompt("Digite a nota 1 do aluno"));
+            let n2 = Number(prompt("Digite a nota 2"));
+            let n3 = Number(prompt("Digite a nota 3."));
+            let aulas = Number(prompt("Digite o número de aulas totais frequentadas pelo aluno"));
+            while (aulas < 0 || isNaN(aulas) || aulas > 32) {
+                alert("O número total de aula é 32, digite um número válido")
+                aulas = Number(prompt("Digite o número de aulas totais frequentadas pelo aluno"));
+
+            }
+            let media = ((n1 + n2 + n3) / 3);
+            let situação;
+
+            pergunta = Number(prompt("Quer cadastrar outra matricula.\n [ 1 ]- Sim \n [ 0 ] Não"));
+            
+            if (media >= 7 && aulas >= 25) {
+                situação = "aprovado";
+                alunoaprovado++;
+                document.getElementById("aluno").innerHTML += "</br><hr>Aluno aprovado: " + matricula + " </br>Frequência: " + aulas + " </br>Média: " + media ;
+            } else {
+                situação = "reprovado";
+                alunoreprovado++;
+                document.getElementById("aluno").innerHTML += "</br><hr>Aluno reprovado: " + matricula + " </br>Frequência: " + aulas + " </br>Média: " + media ;
+                document.getElementById("aluno").innerHTML += "</br><hr> Aluno aprovado: " + alunoaprovado + " </br><hr>alunos reprovados: "+ alunoreprovado ;
+            }
+            
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nota</title>
+</head>
+<body>
+    <h1>Atividade 01</h1>
+    <div id="cadastro"></div>
+<script>
+
+    let pergunta = Number(prompt("Quer cadastrar os registro da disciplin. \n [ 0 ]- Sim \n [ 1 ] Não "));
+    while (pergunta == 0) {
+        let nomeDisciplina = prompt("Digite a disciplina.");
+        let descricaoDisciplina = prompt("Digite a descrição da disciplina.");
+        let frequenciaDisciplina = prompt("Digite a frequencia da disciplina.");
+        let notaDisciplina = prompt("Digite a nota da  disciplina.");
+
+        pergunta = Number(prompt("Quer cadastrar outra disciplina.\n [ 0 ]- Sim \n [ 1 ] Não"));
+        document.getElementById("cadastro").innerHTML += "</br> <hr/>Disciplina: " + nomeDisciplina + "</br>Descrição: " + descricaoDisciplina + descricaoDisciplina + " </br>Frequência Mínima: " + frequenciaDisciplina
+        + "</br> Nota mínima: " + notaDisciplina
+        
+    }
+</script>    
+</body>
+</html>
